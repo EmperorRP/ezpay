@@ -1,0 +1,31 @@
+/* globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blur-color: #5B13C4;
+  --foreground-color: #0D0D0D;
+  --text-color: #ffffff;
+}
+
+body {
+  position: relative;
+  background-color: var(--foreground-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vmax;
+  height: 100vmax;
+  background: radial-gradient(circle, rgba(91, 19, 196, 0.3), transparent);
+  filter: blur(15vmin);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
